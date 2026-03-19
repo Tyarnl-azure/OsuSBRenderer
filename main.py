@@ -32,7 +32,6 @@ _worker_layers = None
 _worker_evaluators = None
 
 def worker_init(input_dir, layers, video_obj, res_w, res_h, fps, mem_limit_bytes):
-    """子进程初始化函数"""
     import config
     import ctypes
     if os.name == 'nt':
@@ -52,7 +51,6 @@ def worker_init(input_dir, layers, video_obj, res_w, res_h, fps, mem_limit_bytes
     _worker_evaluators = {s: TimelineEvaluator(s) for layer in layers.values() for s in layer}
 
 def worker_render(frame_idx, current_time_ms):
-    """执行单帧渲染"""
     global _worker_renderer, _worker_layers, _worker_evaluators
     img = _worker_renderer.render_frame(_worker_layers, _worker_evaluators, current_time_ms)
     return frame_idx, img
