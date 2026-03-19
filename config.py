@@ -1,0 +1,19 @@
+"""
+Global configuration and coordinate scaling logic.
+Converts Osu! native 640x480 coordinates to modern screen resolutions.
+"""
+SCREEN_WIDTH = 1920
+SCREEN_HEIGHT = 1080
+FPS = 60
+OSU_BASE_HEIGHT = 480.0
+OSU_BASE_WIDTH = 640.0
+GLOBAL_SCALE = SCREEN_HEIGHT / OSU_BASE_HEIGHT
+WIDESCREEN_OFFSET_X = (SCREEN_WIDTH - OSU_BASE_WIDTH * GLOBAL_SCALE) / 2.0
+
+def update_config(width, height, fps):
+    global SCREEN_WIDTH, SCREEN_HEIGHT, FPS, GLOBAL_SCALE, WIDESCREEN_OFFSET_X
+    SCREEN_WIDTH = width
+    SCREEN_HEIGHT = height
+    FPS = fps
+    GLOBAL_SCALE = SCREEN_HEIGHT / OSU_BASE_HEIGHT
+    WIDESCREEN_OFFSET_X = (SCREEN_WIDTH - OSU_BASE_WIDTH * GLOBAL_SCALE) / 2.0
