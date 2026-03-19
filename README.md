@@ -1,6 +1,6 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 # OsuSBRenderer (Alpha v1.0)
-# 不想写，AI弄的
+# 不想写，README是AI弄的
 # 为什么还要继续看啊啊啊啊啊啊啊
 
 **OsuSBRenderer** 是一款基于 Python 开发的OSU故事板视频渲染工具。它能够将.osb或.osu(这部分有点多余)文件中的视觉效果导出为视频文件
